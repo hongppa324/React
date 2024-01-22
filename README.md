@@ -1,4 +1,4 @@
-**<내일배움캠프 React 4기 Standard반 과제제출>**
+# <내일배움캐프 React Standard반 과제 제출>
 
 1차시 과제명 : 배열 API 페이지 구성
 
