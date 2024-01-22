@@ -5,8 +5,7 @@ function App() {
   const initialArray = ["apple", "banana", "cherry", "date", "elderberry"];
 
   const [array, setArray] = useState(initialArray);
-  // 함수 실행
-  // useState의 결과물은 배열! [state, state를 제어하는 함수]
+  // 함수 실행 : useState의 결과물은 배열! [state, state를 제어하는 함수]
   // 좌측은 구조분해 할당
   const [result, setResult] = useState("");
   const [query, setQuery] = useState("");
@@ -78,7 +77,7 @@ function App() {
     setArray(newArr);
     setResult(newArr.join(", "));
   };
-  // 시작하는 위치, 지우는 값의 수, 삽입할 요소
+  // splice(시작하는 위치, 지우는 값의 수, 삽입할 요소)
 
   const handleIndexOf = () => {
     const idx = array.indexOf(query);
@@ -112,19 +111,19 @@ function App() {
 
   const handleSort = () => {
     const sortedList = [...array].sort(function (a, b) {
-      if (a > b) {
-        return -1;
-      }
-      if (a < b) {
-        return 1;
-      } else {
-        return 0;
-      }
+      if (a > b) return -1;
+      if (a < b) return 1;
+      else return 0;
     });
     setResult(sortedList.join(", "));
   };
-
   // sort는 기본적으로 오름차순으로 정렬
+
+  const handleJoin = () => {
+    const joinedArray = array.join(", ");
+    setResult(joinedArray);
+  };
+  // 변화 없음.
 
   return (
     <div className="App">
@@ -153,6 +152,7 @@ function App() {
         <button onClick={handleSome}>some</button>
         <button onClick={handleEvery}>every</button>
         <button onClick={handleSort}>sort</button>
+        <button onClick={handleJoin}>join</button>
       </div>
       <div className="array-box">
         <strong>원본 배열 </strong>: {array.join(", ")}
