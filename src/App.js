@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 
@@ -134,8 +133,8 @@ function App() {
         <input
           placeholder="Enter text"
           value={query}
-          onChange={(e) => {
-            setQuery(e.target.value);
+          onChange={(event) => {
+            setQuery(event.target.value);
           }}
         />
       </div>
@@ -155,22 +154,10 @@ function App() {
         <button onClick={handleEvery}>every</button>
         <button onClick={handleSort}>sort</button>
       </div>
-      <div
-        style={{
-          border: "1px solid black",
-          padding: "10px",
-          margin: "10px",
-        }}
-      >
+      <div className="array-box">
         <strong>원본 배열 </strong>: {array.join(", ")}
       </div>
-      <div
-        style={{
-          border: "1px solid black",
-          padding: "10px",
-          margin: "10px",
-        }}
-      >
+      <div className="array-box">
         <strong>결과물 </strong>: {result}
       </div>
     </div>
